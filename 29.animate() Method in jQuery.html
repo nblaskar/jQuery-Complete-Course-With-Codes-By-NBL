@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      width: 150px;
+      height: 150px;
+      padding: 10px;
+      border: 1px solid #000000;
+      background: cadetblue;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>animate() Method in jQuery</h1>
+
+  <div id="box">Hello jQuery</div>
+  <br>
+  <button id="simpleanimatebtn">Simple Animate</button>
+  <button id="advanimatebtn"> Advance Animate</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //standered Animation
+      $('#simpleanimatebtn').click(function () {
+        $('#box').animate({
+          left: '150px',
+          width: '+=150px',
+          fontSize: '30px',
+          borderWidth: '10px'
+        }, 3000, function () {
+          console.log("animation Done");
+        });
+      });
+
+      //Advance Animation in cue mode
+      $('#advanimatebtn').click(function () {
+        $('#box').animate({ left: '150px', fontSize: '25px' }, 2000, function () { console.log('firt animation done') });
+        $('#box').animate({ top: '150px' }, 'slow');
+        $('#box').animate({ width: '+=150px' }, 'fast');
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

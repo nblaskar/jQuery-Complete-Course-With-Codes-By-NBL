@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      padding: 10px;
+      border: 1px solid #000000;
+      background: cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>replaceWith() and replaceAll Methods in jquery</h1>
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, eum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, eum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, eum.</p>
+  </div><br>
+
+  <button id="ReplaceWithbtn">ReplaceWith</button>
+  <button id="ReplaceAllbtn">ReplaceAll</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //replaceWith() Method
+      $('#ReplaceWithbtn').click(function () {
+        $('#box p:first').replaceWith('<h2>Hello JS</h2> Developer');
+      });
+
+      //replaceAll() Method
+      $('#ReplaceAllbtn').click(function () {
+        $('<h2>JavaScript</h2>').replaceAll('#box p:first');
+      });
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>

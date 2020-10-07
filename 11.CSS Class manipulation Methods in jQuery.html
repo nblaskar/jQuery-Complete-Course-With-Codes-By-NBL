@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    body {
+      font-family: arial;
+    }
+
+    #box {
+      padding: 10px;
+      border: 1px solid #000000;
+    }
+
+    .first {
+      background: tan;
+    }
+
+    .second {
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS Class manipulation Methods in jquery</h1>
+
+  <div id="box" class="test abc">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Saepe, doloremque!</p>
+  </div><br>
+  <button id="addbutton">Add Class</button>
+  <button id="removebutton">Remove Class</button>
+  <button id="togglebutton">Toggle Class</button>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //addClass
+      $('#addbutton').click(function () {
+        $('#box,h1').addClass('first');
+      });
+
+      //removeClass
+      $('#removebutton').click(function () {
+        $('#box').removeClass('first');
+        // $('#box').removeClass();
+      });
+
+      //toggleClass
+      $('#togglebutton').click(function () {
+        $('#box').toggleClass('second');
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

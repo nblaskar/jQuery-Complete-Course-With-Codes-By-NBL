@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      width: 90%;
+      height: 200px;
+      background: cadetblue;
+      border: 1px solid black;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>event.target Property in jQuery</h1>
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae laborum iure ex, rem maxime delectus unde aut!
+      Incidunt, maiores eligendi dicta enim omnis assumenda molestiae autem aliquid fugit in sapiente!</p>
+    <button>Test Button</button>
+  </div><br>
+
+  <h3></h3>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#box').on("click", function (e) {
+        $('h3').html('Target Element: ' + e.target.nodeName);
+      });
+
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>

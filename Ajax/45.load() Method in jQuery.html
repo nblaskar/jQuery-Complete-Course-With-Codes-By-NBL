@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      height: 100px;
+      background: silver;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>load() method in jQuery</h1>
+  <div id="box">
+  </div><br>
+  <button id="btn1">Load Data-1</button>
+  <button id="btn2">Load Data-2</button>
+  <button id="btn3">Load Data-3</button>
+
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //process-1
+      $('#btn1').click(function () {
+        $('#box').load("data.txt");
+      });
+
+      //process-2
+      $('#btn2').click(function () {
+        $('#box').load("data.html #h", function () {
+          alert("data loaded successfully");
+        });
+      });
+
+      //process-3
+      $('#btn3').click(function () {
+        $('#box').load("data.txt", function (responseTxt, statusTxt, xhr) {
+          console.log(responseTxt, statusTxt, xhr);
+          if (statusTxt == "success") {
+            console.log("data loaded successfully");
+          }
+          if (statusTxt == "error") {
+            console.log("Error: " + xhr.status + ": " + statusTxt);
+          }
+        });
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

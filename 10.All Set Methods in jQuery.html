@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    body {
+      font-family: arial;
+    }
+
+    #box {
+      background: pink;
+      padding: 10px;
+      border: 1px solid #000000;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>All Set Methods in jquery</h1>
+  Input Field: <input type="text" id="inputId">
+  <br>
+  <div id="box" class="test abc">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Saepe, doloremque!</p>
+  </div><br>
+  <button id="clickbtn">Set Value</button>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#clickbtn').click(function () {
+
+        //Set the text content
+        $('#box h2').text("Hello NBL");
+
+        //Set the html content
+        $('#box p').html("I am  <b> NBL</b>");
+
+        //Set the attribute
+        $('#box h2').attr('class', 'red');
+
+        //Set the value
+        $('#inputId').val("Enter your Data");
+
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

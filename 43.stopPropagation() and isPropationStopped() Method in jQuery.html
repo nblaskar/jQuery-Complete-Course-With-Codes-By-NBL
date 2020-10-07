@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      height: 200px;
+      background: blanchedalmond;
+      border: 1px solid black;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>stopPropagation() and isPropationStopped() Method in jQuery</h1>
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ipsam a exercitationem culpa. Eligendi, sunt.</p>
+    <button>Test Button</button>
+  </div>
+
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      $('#box').click(function () {
+        alert('The div Element was Clicked ');
+      });
+
+      $('h2').click(function () {
+        alert('The h2 Element was Clicked ');
+      });
+
+      $('p').click(function (e) {
+        e.stopPropagation()
+        alert('The p Element was Clicked: ' + e.isPropagationStopped());
+      });
+
+      $('button').click(function () {
+        alert('The button Element was Clicked ');
+      });
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>

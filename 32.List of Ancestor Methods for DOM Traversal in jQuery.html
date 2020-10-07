@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #main-outer {
+      border: 1px solid black;
+      background: darkgray;
+      padding: 10px;
+      width: 90%;
+      height: 400px;
+      margin: auto;
+    }
+
+    #outer {
+      border: 1px solid black;
+      background: peru;
+      padding: 10px;
+      height: 270px;
+      margin: auto;
+    }
+
+    #inner {
+      border: 1px solid black;
+      background: pink;
+      padding: 10px;
+      height: 150px;
+      margin: auto;
+      display: block;
+    }
+
+    #inner div {
+      border: 1px solid black;
+      float: left;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      width: 16%;
+      height: 80px;
+      background: powderblue;
+      margin: 5px;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>List of Ancestor Methods for DOM Traversal in jQuery</h1>
+
+  <div id="main-outer">
+    <h2>Main Outer</h2>
+    <div id="outer" style="position: relative;">
+      <h2>Outer</h2>
+      <div id="inner">
+        <h2 id="child-head">inner</h2>
+        <div>A</div>
+        <div>B</div>
+        <div id="child-c">C</div>
+        <div>D</div>
+        <div>E</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //parent() Method
+      // $('#child-c').parent().css('background', 'red');
+
+      //parents() Method
+      // $('#child-c').parents().css('background', 'red');
+      //$('#child-c').parents('#main-outer').css('background', 'red');
+
+      //parentsUntil() Method
+      //$('#child-c').parentsUntil('#main-outer').css('background', 'red');
+
+      //offsetparent() Method
+      //$('#child-c').offsetParent().css('background', 'red');
+
+      //closest() Method
+      $('#child-c').closest('Div').css('background', 'red');
+
+    });
+
+  </script>
+
+</body>
+
+</html>

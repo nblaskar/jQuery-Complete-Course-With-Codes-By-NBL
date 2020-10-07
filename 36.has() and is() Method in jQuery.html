@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #first {
+      border: 1px solid black;
+      background: lightgreen;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>has() and is() Method in jQuery</h1>
+  <div id="first">
+    <p>Lorem ipsum dolor sit <b>amet consectetur, adipisicing elit. Explicabo impedit voluptate eos,</b> omnis
+      voluptatem sunt?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni praesentium necessitatibus blanditiis vel facere
+      modi?</p>
+  </div>
+  <ul>
+    <li>Orange</li>
+    <li> <span>Apple</span></li>
+    <li>Banana</li>
+    <li>Grapes</li>
+  </ul>
+
+  <p class="test">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, hic incidunt sapiente fuga corporis
+    nobis?</p>
+  <p>Lorem ipsum dolor <span class="test">sit amet consectetur adipisicing</span> elit. Harum itaque eligendi tempore,
+    excepturi officiis dicta.
+  </p>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //has() Method 
+      //$('p').has('span').css('background', 'gold');
+      //$('p').has('b,span').css('background', 'gold');
+      //$('p').has('.test').css('background', 'gold');
+      /*
+            //is() Method 
+            if ($('p').parent().is('div')) {
+              console.log($('p').parent().is('div'));
+            }
+            */
+
+      //is() Method in Advance
+      $('p').click(function () {
+        if ($(this).parent().is('div')) {
+          $(this).css('background', 'gold');
+
+        }
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>

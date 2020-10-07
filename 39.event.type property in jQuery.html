@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      width: 100%;
+      height: 250px;
+      background: cadetblue;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>event.type() property in jQuery</h1>
+  <div id="box">
+
+  </div>
+  <h2></h2>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#box').on("click dblclick mouseover mouseout", function (e) {
+        $('h2').html('Event: ' + e.type);
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

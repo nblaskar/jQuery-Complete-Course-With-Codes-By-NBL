@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    body {
+      font-family: arial;
+    }
+
+    #box {
+      background: pink;
+      padding: 10px;
+      border: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>All Get Methods in jquery</h1>
+  <form action="">
+    Input Field: <input type="text" id="inputId">
+  </form> <br> <br>
+  <div id="box" class="test abc">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Saepe, doloremque!</p>
+  </div>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#box').click(function () {
+        //get the text content
+        var txt = $('#box').text();
+        console.log(txt);
+        //get the html content
+        var ht = $('#box').html();
+        console.log(ht);
+
+        //get the attribute
+        var atr = $('#box').attr('class');
+        console.log(atr);
+
+        //get the value of input Field
+        var vl = $('#inputId').val();
+        console.log(vl);
+
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

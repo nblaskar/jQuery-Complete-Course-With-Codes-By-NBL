@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #main-outer {
+      border: 1px solid black;
+      background: darkgray;
+      padding: 10px;
+      width: 90%;
+      height: 430px;
+      margin: auto;
+    }
+
+    #outer {
+      border: 1px solid black;
+      background: peru;
+      padding: 10px;
+      height: 310px;
+      margin: auto;
+    }
+
+    #inner {
+      border: 1px solid black;
+      background: pink;
+      padding: 10px;
+      height: 190px;
+      margin: auto;
+      display: block;
+    }
+
+    #inner div {
+      border: 1px solid black;
+      float: left;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      width: 16%;
+      height: 100px;
+      background: powderblue;
+      margin: 5px;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>all sibling Methods in jQuery</h1>
+
+  <div id="main-outer">
+    <h2>Main Outer</h2>
+    <div id="outer">
+      <h2>Outer</h2>
+      <div id="inner">
+        <h2 id="child-head" class="test">inner</h2>
+        <div>A</div>
+        <div>B</div>
+        <div id="child-c">C</div>
+        <div>D</div>
+        <div class="test">E</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //siblings() Method
+      // $('#child-c').siblings().css('background', 'red');
+      //$('#child-c').siblings('.test').css('background', 'red');
+
+      //next() Method
+      //$('#child-c').next().css('background', 'red');
+
+      //prev() Method
+      //$('#child-c').prev().css('background', 'red');
+
+      //nextAll() Method
+      //$('#child-c').nextAll().css('background', 'red');
+      //$('#child-c').nextAll('.test').css('background', 'red');
+
+      //prevAll() Method
+      //$('#child-c').prevAll().css('background', 'red');
+      //$('#child-c').prevAll('.test').css('background', 'red');
+
+
+      //nextUntil() Method
+      // $('#child-head').nextUntil('#child-c').css('background', 'red');
+
+      //prevUntil() Method
+      $('.test').prevUntil('#child-head').css('background', 'red');
+
+    });
+
+  </script>
+
+</body>
+
+</html>

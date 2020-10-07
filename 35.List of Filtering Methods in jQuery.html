@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    body {
+      font-family: Arial;
+      font-size: 16px;
+    }
+
+    #first {
+      border: 1px solid black;
+      background: lightgreen;
+      padding: 10px;
+    }
+
+    #second {
+      border: 1px solid black;
+      background: pink;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>List of Filtering Methods in jQuery</h1>
+  <div id="first">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo impedit voluptate eos, omnis voluptatem sunt?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni praesentium necessitatibus blanditiis vel facere
+      modi?</p>
+  </div>
+  <ul>
+    <li>Orange</li>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Grapes</li>
+  </ul>
+  <div id="second">
+    <p class="test">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, hic incidunt sapiente fuga corporis
+      nobis?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum itaque eligendi tempore, excepturi officiis dicta.
+    </p>
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //first() Method
+      //$('#second p').first().css('background', 'gold');
+
+      //last() Method
+      //$('ul li').last().css('background', 'gold');
+
+      //eq() Method
+      // $('ul li').eq(1).css('background', 'gold');
+
+      //filter() Method
+      // $('p').filter('.test').css('background', 'gold');
+
+      //not() Method
+      // $('p').not('.test').css('background', 'gold');
+
+      //slice() Method
+      $('ul li').slice(1, 3).css('background', 'gold');
+
+    });
+
+  </script>
+
+</body>
+
+</html>

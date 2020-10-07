@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      height: 100px;
+      background: silver;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>ajax() method in jQuery</h1>
+  <div id="box">
+  </div><br>
+  <button id="btn">ajax() Method</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#btn').click(function () {
+        function getDate() {
+          $.ajax({
+            url: "request3.php",
+            type: "POST",
+            data: "action=getDate",
+            success: function (resposneTxt) {
+              $('#box').text(resposneTxt);
+            },
+            error: function () {
+              console.log("failed to load");
+            }
+
+          });
+        };
+        setInterval(getDate, 1000);
+      });
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>

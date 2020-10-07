@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #test {
+      background: pink;
+      padding: 5px;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>wrapAll() and wrapInner() Method in jQuery</h1>
+  <div>
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, fugit!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quas!</p>
+  </div><br>
+
+  <button id="wrapallbtn">WrapAll</button>
+  <button id="wrapinnerbtn">wrapInner</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //wrapAll() Method
+      $('#wrapallbtn').click(function () {
+        $('p').wrapAll("<div id='test'></div>");
+      });
+
+      //wrapInner() Method
+      $('#wrapinnerbtn').click(function () {
+        $('h1').wrapInner('<span class="red"></span>');
+      });
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>

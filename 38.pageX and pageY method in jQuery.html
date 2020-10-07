@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #result {
+      width: 100%;
+      height: 250px;
+      background: cadetblue;
+      border: 1px solid black;
+    }
+
+    #box {
+      background: pink;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>pageX and pageY method in jQuery</h1>
+  <div id="result">
+  </div>
+  <div id="box">
+
+  </div>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(document).mousemove(function (e) {
+        $('#result').html('X: ' + e.pageX + '<br>Y: ' + e.pageY);
+
+        var x = e.pageX;
+        var y = e.pageY;
+        $('#box').offset({ top: y, left: x });
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>

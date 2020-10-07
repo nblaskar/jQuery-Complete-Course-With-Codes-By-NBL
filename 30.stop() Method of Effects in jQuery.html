@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      width: 150px;
+      height: 150px;
+      padding: 10px;
+      border: 1px solid #000000;
+      background: cadetblue;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>stop() Method of Effects in jQuery</h1>
+
+  <div id="box">Hello jQuery</div>
+  <br>
+  <button id="animatebtn">Animate</button>
+  <button id="stopbtn">Stop</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#animatebtn').click(function () {
+        $('#box').animate({ left: '300px' }, 2000);
+        $('#box').animate({ fontSize: '30px' }, 2000);
+      });
+
+      $('#stopbtn').click(function () {
+        $('#box').stop(true, false);
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

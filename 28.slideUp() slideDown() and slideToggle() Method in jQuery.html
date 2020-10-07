@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      padding: 10px;
+      border: 1px solid #000000;
+      background: cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>slideUp() slideDown() and slideToggle() Method in jQuery</h1>
+
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Saepe, doloremque!</p>
+  </div><br>
+  <button id="slideupbtn">slideUp</button>
+  <button id="slidedownbtn">slideDown</button>
+  <button id="slidetogglebtn">slideToggle</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //slideUp() Method
+      $('#slideupbtn').click(function () {
+        $('#box').slideUp(1000, function () {
+          console.log("slide is Up");
+        });
+      });
+
+      //slideDown() Method
+      $('#slidedownbtn').click(function () {
+        $('#box').slideDown("slow", function () {
+          console.log("slide is Down");
+        });
+      });
+
+      //slideToggle() Method
+      $('#slidetogglebtn').click(function () {
+        $('#box p').slideToggle("fast", function () {
+          console.log("slide is Toggle");
+        });
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

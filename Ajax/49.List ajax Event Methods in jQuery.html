@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      height: 100px;
+      background: silver;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>ajax() method in jQuery</h1>
+  <div id="box">
+  </div><br>
+  <div id="wait"
+    style="display: none;width: 70px; height: 90px; border: 1px solid red; position: absolute; top: 50%; left: 50%; padding: 2px;">
+    <img src="loading.gif" style="width: 65px; height: 65px; "><br>loading...
+
+  </div>
+
+  <button id="ajaxStartbBtn">ajax</button>
+  <button id="ajaxTecBtn">ajax Technology</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    /*
+        $(document).ready(function () {
+          $('#ajaxStartbBtn').click(function () {
+    
+            $(document).ajaxStart(function () {
+              console.log("ajaxStart(): triggered");
+            });
+    
+            $(document).ajaxSend(function (event, xhr, options) {
+              //console.log(event, xhr, options);
+              console.log('ajaxSend: ' + options.url);
+            });
+            $(document).ajaxError(function (event, xhr, options) {
+              //console.log(event, xhr, options);
+              console.log("ajaxError: " + xhr.statusText);
+            });
+    
+            $(document).ajaxStop(function () {
+              console.log("ajaxStop: Data Loaded Successly");
+            });
+    
+            $(document).ajaxComplete(function (event, xhr, options) {
+              //console.log(event, xhr, options);
+              console.log('ajaxComplete: ' + xhr.statusText);
+            });
+    
+            $(document).ajaxSuccess(function (event, xhr, options) {
+              //console.log(event, xhr, options);
+              console.log('ajaxSuccess: ' + xhr.statusText);
+            });
+    
+            $(document).load('data.txt', function (responseTxt) {
+              console.log("load : " + "Data Loaded Successfully");
+              $('#box').html(responseTxt);
+            });
+          });
+        });
+        */
+    //Real use of Ajax
+    $(document).ready(function () {
+      $(document).ajaxStart(function () {
+        $("#wait").css("display", "block");
+      });
+      $(document).ajaxComplete(function () {
+        $("#wait").css("display", "none");
+      });
+
+      $('#ajaxTecBtn').click(function () {
+        $("#box").load("https://jsonplaceholder.typicode.com/posts/1");
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

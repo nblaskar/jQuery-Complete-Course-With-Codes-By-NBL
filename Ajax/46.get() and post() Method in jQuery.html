@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      height: 100px;
+      background: silver;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>get() and getJSON() method in jQuery</h1>
+  <div id="box">
+  </div><br>
+  <button id="btn1">get() Method</button>
+  <button id="btn2">getJSON() Method</button>
+  <button id="btn3">Advance get() Method</button>
+
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //Structure-1
+      $('#btn1').click(function () {
+        $.get("data.txt", function (responseTxt, statusTxt, xhr) {
+          console.log(responseTxt);
+          $('#box').text(responseTxt);
+        });
+      });
+
+      //Structure-2
+      $('#btn2').click(function () {
+        $.getJSON("data.json", function (responseTxt, statusTxt, xhr) {
+          console.log(responseTxt);
+          $('#box').text(responseTxt.name);
+        });
+      });
+
+      //Structure-3
+      $('#btn3').click(function () {
+        $.get("data.txt", function (responseTxt, statusTxt, xhr) {
+          $('#box').text(responseTxt);
+          console.log("Data: " + responseTxt + "\nStatus: " + statusTxt);
+        }).fail(function () {
+          console.log("Fail to Get the Data");
+        }).done(function () {
+          console.log("Completed");
+        });
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

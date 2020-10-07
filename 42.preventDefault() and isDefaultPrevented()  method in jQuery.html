@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      height: 200px;
+      background: blanchedalmond;
+      border: 1px solid black;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>preventDefault() and isDefaultPrevented() method in jQuery</h1>
+  <div id="box">
+    <a href="https://www.fixingexpert.com" id="result">WebSite Link (PreventDefault)</a><br><br>
+    <a href="https://www.fixingexpert.com">WebSite Link</a>
+  </div> <br>
+
+  <h2></h2>
+
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+
+    $(document).ready(function () {
+      $('#result').click(function (e) {
+        e.preventDefault();
+
+        var a = e.isDefaultPrevented();
+        $('h2').html('isDefaultPrevented: ' + a);
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

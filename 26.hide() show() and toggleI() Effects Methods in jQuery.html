@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      padding: 10px;
+      border: 1px solid #000000;
+      background: cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>hide() show() and toggleI() Methods in jQuery</h1>
+
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Saepe, doloremque!</p>
+  </div><br>
+  <button id="hidebtn">Hide</button>
+  <button id="showbtn">show</button>
+  <button id="togglebtn">Toggle</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //hide() Method
+      $('#hidebtn').click(function () {
+        $('#box p').hide(1000, function () {
+          console.log("data is hidden");
+        });
+      });
+      //show() Method
+      $('#showbtn').click(function () {
+        $('#box p').show("slow", "swing", function () {
+          console.log("data is shown");
+        });
+      });
+      //toggle() Method
+      $('#togglebtn').click(function () {
+        $('#box h2').toggle("fast", "linear", function () {
+          console.log("data is toggled");
+        });
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

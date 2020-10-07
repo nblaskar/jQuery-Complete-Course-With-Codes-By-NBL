@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      padding: 10px;
+      border: 1px solid #000000;
+      background: cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>chaining of Methods in jQuery</h1>
+
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Animi ipsa similique facere perspiciatis,
+      quasi ex!</p>
+  </div>
+  <br>
+  <button id="animatebtn">Animate</button>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#animatebtn').click(function () {
+        $('#box').css('background', 'pink').slideUp(2000).slideDown('slow');
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

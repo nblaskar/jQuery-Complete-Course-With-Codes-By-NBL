@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+</head>
+
+<body>
+  <h1>Selectors in jquery</h1>
+  <ul id="list">
+    <li>Orange</li>
+    <li class="test">Banana</li>
+    <li>Grapes</li>
+    <li class="test">Apple</li>
+    <li>Guava</li>
+  </ul>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //1)To make all Text Color Red
+      // $("*").css("color", "red");
+      //select li inside ul
+      //$("ul li").css("color", "blue");
+      //select li inside ul
+      //$("li:last").css("color", "green");
+      //select even li
+      //$("ul li:eq(2)").css("color", "green");
+      //$("ul li:gt(2)").css("color", "green");
+      //$("ul li:lt(2)").css("color", "green");
+      $("*").css("border", "2px solid green");
+
+
+    });
+  </script>
+
+</body>
+
+</html>

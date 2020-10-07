@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      height: 150px;
+      background: blanchedalmond;
+      border: 1px solid black;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>event.data property in jQuery</h1>
+  <div id="box">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, a.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, reprehenderit?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, voluptatibus.</p>
+  </div>
+
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+
+    $(document).ready(function () {
+      $('p').each(function (indx) {
+        $(this).on("click", { val: indx }, function (e) {
+          alert(e.data.val);
+        });
+      });
+    });
+
+
+  </script>
+
+</body>
+
+</html>

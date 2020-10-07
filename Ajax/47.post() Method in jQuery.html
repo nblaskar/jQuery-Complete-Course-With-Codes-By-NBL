@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      height: 100px;
+      background: silver;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>post() method in jQuery</h1>
+  <div id="box">
+  </div><br>
+  <button id="btn1">post() Method</button>
+  <button id="btn2">post()-2 Method</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //Structure-1
+      var data = { id: 1, name: "nbl", age: 24 };
+      $('#btn1').click(function () {
+        $.post('request1.php', data, function (responseTxt) {
+          console.log(responseTxt);
+        }).fail(function () {
+          console.log("Failed to Send");
+        }).done(function () {
+          console.log("Successfull");
+        });
+      });
+
+      //Structure-2
+      var data = { id: 1, name: "nbl", age: 29 };
+      $('#btn2').click(function () {
+        $.post('request2.php', data, function (responseTxt) {
+          $('#box').text(responseTxt);
+        }).fail(function () {
+          console.log("Failed to Send");
+        }).done(function () {
+          console.log("Successfull");
+        });
+      });
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>

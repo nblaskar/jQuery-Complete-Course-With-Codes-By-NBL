@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #box {
+      background: lightgreen;
+      padding: 30px;
+      border: 2px solid black;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>position() and offset() Method in jQuery.html</h1>
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A repudiandae labore mollitia quam culpa architecto?
+      Exercitationem ut veniam eos commodi doloremque, sint aut! Quisquam, ex.</p>
+  </div><br>
+
+  <button id="positionbtn">Position</button>
+  <button id="offsetbtn">Offset</button>
+  <button id="setbtn">Set Position By offset</button>
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //position() Method
+      $('#positionbtn').click(function () {
+        console.log($('#box h2').position());
+        var pos = $('#box h2').position();
+        console.log("Position Left: " + pos.left);
+        console.log("Position Top: " + pos.top);
+
+      });
+      //offset() Method
+      $('#offsetbtn').click(function () {
+        console.log($('#box h2').offset());
+        var ofs = $('#box h2').offset();
+        console.log("offset Left: " + ofs.left);
+        console.log("offset Top: " + ofs.top);
+      });
+
+      //set the position by offset()  Method
+      $('#setbtn').click(function () {
+        $('#box h2').offset({ top: 0, left: 0 });
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

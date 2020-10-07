@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Jquery</title>
+  <style>
+    #main-outer {
+      border: 1px solid black;
+      background: darkgray;
+      padding: 10px;
+      width: 90%;
+      height: 430px;
+      margin: auto;
+    }
+
+    #outer {
+      border: 1px solid black;
+      background: peru;
+      padding: 10px;
+      height: 310px;
+      margin: auto;
+    }
+
+    #inner {
+      border: 1px solid black;
+      background: pink;
+      padding: 10px;
+      height: 190px;
+      margin: auto;
+      display: block;
+    }
+
+    #inner div {
+      border: 1px solid black;
+      float: left;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      width: 16%;
+      height: 100px;
+      background: powderblue;
+      margin: 5px;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>List of Descendants Methods in jQuery</h1>
+
+  <div id="main-outer">
+    <h2>Main Outer</h2>
+    <div id="outer">
+      <h2>Outer</h2>
+      <div id="inner">
+        <h2 class="test">inner</h2>
+        <div>A</div>
+        <div>B</div>
+        <div id="child-c">C</div>
+        <div>D</div>
+        <div class="test">E</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //children()nMethod
+      //$('#inner').children().css('background', 'red');
+      //$('#inner').children('#child-c').css('background', 'red');
+
+      //find() Method
+      $('#main-outer').find('.test').css('background', 'red');
+    });
+
+  </script>
+
+</body>
+
+</html>
